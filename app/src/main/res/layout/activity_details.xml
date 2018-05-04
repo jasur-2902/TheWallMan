@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="viewmodel"
+            type="uz.shukurov.thewallman.viewmodels.PixabayImageViewModel"/>
+
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            />
+
+        <com.github.chrisbanes.photoview.PhotoView
+            android:id="@+id/activity_detail_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            app:imageUrl="@{viewmodel.highResImageUrl}" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:background="@color/colorTransparentDark"
+            android:orientation="vertical"
+            android:padding="16dp"
+            android:id="@+id/linearLayout">
+
+            <TextView
+                android:id="@+id/activity_detail_tags"
+                style="@style/PixabayImageTextTags"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@{viewmodel.tags}"
+                tools:text="TEST - TEST - TEST"/>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <TextView
+                    android:id="@+id/activity_detail_user_name"
+                    style="@style/PixabayImageTextUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentLeft="true"
+                    android:text="@{viewmodel.userName}"
+                    tools:text="TEST - TEST - TEST"/>
+
+                <TextView
+                    android:id="@+id/activity_detail_comments"
+                    style="@style/PixabayImageTextUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_marginRight="4dp"
+                    android:drawableLeft="@drawable/ic_comment"
+                    android:text="@{viewmodel.comments}"
+                    tools:text="1000"/>
+
+                <TextView
+                    android:id="@+id/activity_detail_favorites"
+                    style="@style/PixabayImageTextUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:layout_toLeftOf="@id/activity_detail_comments"
+                    android:drawableLeft="@drawable/ic_favorite"
+                    android:text="@{viewmodel.favorites}"
+                    tools:text="1000"/>
+
+                <TextView
+                    android:id="@+id/activity_detail_likes"
+                    style="@style/PixabayImageTextUser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginRight="4dp"
+                    android:layout_toLeftOf="@id/activity_detail_favorites"
+                    android:drawableLeft="@drawable/ic_like"
+                    android:text="@{viewmodel.likes}"
+                    tools:text="1000"/>
+            </RelativeLayout>
+
+
+        </LinearLayout>
+
+        <Button
+            android:id="@+id/setWall"
+            android:layout_marginBottom="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_above="@+id/linearLayout"
+            android:layout_centerHorizontal="true"
+            android:text="Set Wallpaper"
+            android:textStyle="bold"
+            android:background="@color/colorTransparentDark"
+            android:textColor="@android:color/white" />
+
+
+    </RelativeLayout>
+</layout>

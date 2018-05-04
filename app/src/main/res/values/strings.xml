@@ -1,0 +1,16 @@
+<resources >
+    <string name="app_name">The WallMan</string>
+    <string name="search">Search Image</string>
+    <string name="PIXABAY_API_KEY">8652988-2b682979e9a2016f4c529901a</string>
+    <string name="no_internet">Ops, we could not find an active internet connection…</string>
+    <string name="error">Ops, something is not right…</string>
+    <string name="retry">RETRY</string>
+    <string name="no_results">No results for the query :(</string>
+    <string name="like">Like</string>
+    <string name="favorite">Favorite</string>
+    <string name="comments">Comments</string>
+    <string name="title_activity_main2">PixabayNavigationActivity</string>
+    <string name="title_home">Home</string>
+    <string name="title_category">Category</string>
+    <string name="title_orientation">Orientation</string>
+</resources>
